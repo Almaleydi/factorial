@@ -1,0 +1,88 @@
+<!--comentario-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Aplicacion</title>
+	<!-- las importacines se hacen desde head-->
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" type="text/css" href="css/mystilo.css">
+	<script type="text/javascript" src="js/jquery.js"></script> <!-- copiar los nombres de las librerias y colocar un src -->
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript">
+
+     $(document).ready (function (){
+     	//alert("Buen dia");
+     	$("#btnFactorial").click(function(){
+     		var no1= parseInt($("#nume1").val());
+     		var total=1;
+     		    for(i=1;i<=no1;i++){
+     		    	total*=i;
+                   //alert("El resultado del factorial:"+ total);
+                   $("#Results").val(total);
+     		    }
+     		
+     	});
+     	$("#btnsuma").click(function(){
+     		var n1= parseInt($("#num1").val());
+     		var n2= parseInt($("#num2").val());
+     		var suma=n1+n2;
+     		//alert("El resultado es:"+ suma);
+     		 $("#Resultado").val(suma);
+     	});
+     });	
+	</script>
+</head>
+<body>
+<!-- interfaz de la pagina -->
+<div data-role="page" id="Principal" data-theme="b">
+	<div data-role="header">
+		<p>Principal </p>
+	</div>
+	<div data-role="content">
+		<p>Contenido de la aplicación</p>
+		 <a href="#Suma" data-role="button" data-transition="turn"> Suma</a>
+        <a href="#Factorial" data-role="button" data-transition="turn"> Factorial</a>
+	</div>
+	<div data-role="footer">
+		<p>Pie de la aplicación</p>
+	</div>
+</div><!--termina -->
+
+
+
+<!-- interfaz de la pagina -->
+<div data-role="page" id="Factorial">
+	<div data-role="header">
+		<p> Factorial </p>
+	</div>
+	<div data-role="content">
+		<input type="text" id="nume1" placeholder="Escribe un numero">
+		
+		<input type="button" id="btnFactorial" value="Calcular">
+		<input type="text" id="Results" placeholder=" Resultado">
+	</div>
+	<div data-role="footer">
+		<p>Pie de la aplicación</p>
+	</div>
+</div><!--termina -->
+
+<!-- interfaz de la pagina -->
+<div data-role="page" id="Suma">
+	<div data-role="header">
+		<p>Operacion Suma </p>
+	</div>
+	<div data-role="content">
+		<input type="text" id="num1" placeholder="Escribe un numero">
+		<input type="text" id="num2" placeholder="Escribe un numero">
+		<input type="button" id="btnsuma" value="Calcular">
+		<input type="text" id="Resultado" placeholder=" Resultado">
+	</div>
+	<div data-role="footer">
+		<p>Pie de la aplicación</p>
+	</div>
+</div><!--termina -->
+
+
+</body>
+</html>
